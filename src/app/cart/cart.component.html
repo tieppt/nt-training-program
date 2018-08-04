@@ -1,0 +1,45 @@
+<div class="ptt-cart">
+  <header>
+    <h3 class="cart__header">
+      Your Cart
+    </h3>
+  </header>
+  <div class="row cart-item" *ngFor="let item of cartList">
+    <div class="col-4 col-md-3 col-xl-2">
+      <div class="cart__product-image">
+        <img [src]="item.product.imageUrl" [attr.alt]="item.product.name" class="img-fluid">
+      </div>
+    </div>
+    <div class="col-8 col-md-9 col-xl-10">
+      <div class="cart__product-details">
+        <h4 class="cart__product-name">{{item.product.name}}</h4>
+        <p class="cart__product-price">
+          <strong>{{item.product.price | currency}}</strong>
+        </p>
+        <div>
+          Quantity:
+
+          <mat-form-field class="lol">
+            <button type="button" aria-label="Remove" matPrefix mat-icon-button (click)="descQuantity(item.product.id)">
+              <mat-icon aria-label="Remove icon">remove</mat-icon>
+            </button>
+            <input type="number" matInput [value]="item.quantity" readonly>
+            <button type="button" aria-label="Add" matSuffix mat-icon-button (click)="incQuantity(item.product.id)">
+              <mat-icon aria-label="Add icon">add</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div>
+          <button type="button" aria-label="Remove cart item" mat-icon-button (click)="removeProduct(item.product.id)">
+            <mat-icon aria-label="Remove cart item icon">delete_outline</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-6 col-md-8 text-right"><strong>Total:</strong></div>
+    <div class="col-6 col-md-4">{{grandTotal$ | async | currency}}</div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" (click)="onNavigate()">Home</a>
+      <a mat-list-item routerLink="/products" (click)="onNavigate()">Product</a>
+      <a mat-list-item routerLink="/products/add-new" (click)="onNavigate()">Add new Product</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a routerLink="/" class="page__heading">NP Shop</a>
+      <span class="ptt-nav__spacer"></span>
+      <a
+        class="ptt-nav__cart"
+        routerLink="/cart"
+        aria-label="Shopping cart"
+        mat-icon-button>
+        <mat-icon aria-label="Shopping cart icon" [matBadge]="totalCartItem">shopping_cart</mat-icon>
+      </a>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

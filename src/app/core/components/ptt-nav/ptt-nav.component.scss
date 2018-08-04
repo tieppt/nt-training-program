@@ -1,0 +1,31 @@
+.sidenav-container {
+  min-height: 100vh;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+.page__heading {
+  color: #fff;
+  &:hover {
+    color: #ef5350;
+    text-decoration: none;
+  }
+}
+
+.ptt-nav__spacer {
+  flex: 1 1 auto;
+}
+
+.ptt-nav__cart {
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+
+:host ::ng-deep .mat-badge-content {
+  background: transparent;
+}

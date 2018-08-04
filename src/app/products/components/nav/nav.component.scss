@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.nav {
+  .nav-link {
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      display: block;
+      height: 3px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      transition: width .3s ease-in-out;
+    }
+
+    &.active,
+    &:hover {
+      &::before {
+        width: 80%;
+      }
+    }
+  }
+}

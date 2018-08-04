@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from '../../cart/services/cart.service';
 
 @Component({
   selector: 'np-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'nttp';
+  totalItems = this.cartService.totalItem$;
+  constructor(private cartService: CartService) {}
 }

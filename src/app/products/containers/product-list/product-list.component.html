@@ -1,0 +1,6 @@
+
+<div class="row">
+  <div class="col-sm-6 col-lg-4 col-xl-3" *ngFor="let product of products; trackBy: trackByProductId">
+    <np-single-product [product]="product" (addToCart)="addToCart($event)"></np-single-product>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="p-item" *ngIf="product">
+  <div class="p-item__header">
+    <div class="p-item__image">
+      <img [src]="product.imageUrl" [attr.alt]="product.name" class="img-fluid">
+    </div>
+    <div class="p-item__action">
+      <button mat-raised-button class="p-item__add-cart-btn" (click)="addToCart.next(product)">Add to Cart</button>
+    </div>
+  </div>
+  <div class="p-item__detail">
+    <h4 class="p-item__name">{{product.name}}</h4>
+    <p class="p-item__price"><strong>{{product.price | currency}}</strong></p>
+  </div>
+</div>

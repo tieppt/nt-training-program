@@ -1,0 +1,11 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="activeFilter === 'all'" (click)="onFilter('all')">All</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="activeFilter === 'male'" (click)="onFilter('male')">Male</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="activeFilter === 'female'" (click)="onFilter('female')">Female</a>
+  </li>
+</ul>

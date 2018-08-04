@@ -1,0 +1,26 @@
+.p-item{
+  &__header {
+    position: relative;
+    overflow: hidden;
+  }
+  &__action {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    @media screen and (min-width: 768px) {
+      transform: translateY(100%);
+      transition: transform .2s ease-in-out;
+      .p-item:hover & {
+        transform: translateY(0);
+      }
+    }
+  }
+  &__add-cart-btn {
+    width: 100%;
+    background: rgba(116, 112, 112, 0.6);
+    color: #fff;
+    border-radius: 0;
+    outline: none;
+  }
+}
